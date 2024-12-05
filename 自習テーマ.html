@@ -1,0 +1,26 @@
+<body>
+    <script>
+        //ジャンケン判定プログラム
+        const WIN = 1,
+            DRAW = 0,
+            LOSE = -1;
+        function check(player1, player2) {
+            if (player1 === player2) return DRAW;
+            if ((player1 - player2 + 3) % 3 === 2) return LOSE;
+            return WIN;
+        }
+        for (let player1 = 0; player1 < 3; player1++) {
+            for (let player2 = 0; player2 < 3; player2++) {
+                document.write("player1 = ", player1, ", player2 = ", player2, ", check(player1, player2) = ", check(player1, player2), "<br>");
+            }
+        }
+        document.write("<hr>");
+        //整数比の直角三角形
+        for (let a = 1; a <= 30; a++) {
+            for (let b = a; b <= 30; b++) {
+                let c = Math.sqrt(a * a + b * b);
+                if (Number.isInteger(c) && c >= 1 && c <= 30) document.write(a, ", ", b, ", ", c, "<br>");
+            }
+        }
+    </script>
+</body>
